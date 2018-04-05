@@ -3,6 +3,7 @@
 import $ from 'jquery';
 import './style.css';
 import './assets/bootstrap/bootstrap.min.css';
+import './assets/font-awesome/fontawesome-all.min.css';
 
 let gameNumber,
     guess = document.getElementById('your-guess'),
