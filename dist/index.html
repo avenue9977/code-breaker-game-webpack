@@ -5,7 +5,6 @@
     <meta content="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Iceberg|Press+Start+2P|Wallpoet" rel="stylesheet">
     <title>
         Code Breaker
@@ -13,7 +12,7 @@
 <link rel="shortcut icon" href="favicon.png"></head>
 
 <body>
-    <div class="container">
+    <div id="main-card" class="container">
         <div class="row">
             <div class="col-sm-12">
                 <h1 class="text-center">CODE BREAKER</h1>
@@ -24,26 +23,30 @@
                 <h2 class="display-1 text-center" id="code">****</h2>
             </div>
         </div>
-        <div class="row">
+        <div id="input-form" class="row">
             <div class="col-sm-8 mb-20">
                 <div class="input-group">
-                    <input type="number" name="number" id="your-guess" class="form-control" placeholder="Enter your guess..." aria-label="Enter your guess..." aria-describedby="basic-addon1">
+                    <input type="number" name="number" id="your-guess" class="form-control" placeholder="Enter a number..." aria-label="Enter a number..." aria-describedby="basic-addon1">
                 </div>
             </div>
             <div class="col-sm-4">
-                <button id="submit-guess" type="button" class="btn btn-info btn-primary btn-lg btn-block">SUBMIT</button>
+                <button id="submit-guess" type="button" class="btn btn-success btn-primary btn-lg btn-block">SUBMIT</button>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="alert alert-success alert-dismissible fade collapse" role="alert">
-                    This is a success alert-check it out!
+        <div id="alerts" class="row">
+            <div class="col-sm-9">
+                <div id="success" class="alert alert-success fade hide" role="alert">
+                    Congratulations you have broken the code!
+                </div>
+                <div id="game-over" class="alert alert-danger fade hide" role="alert">
+                    Game Over!
                 </div>
             </div>
-        </div>
-        <div class="row">
+            <div class="col-sm-3">
+                <button id="again" type="button" class="btn btn-info hide">Play Again!</button>
+            </div>
             <div class="col-sm-12">
-                <div id="warning" class="alert alert-warning alert-dismissible fade collapse" role="alert">
+                <div id="warning" class="alert alert-warning fade" role="alert">
                     The integer you enter must be 4 digits long. Try again!
                 </div>
             </div>

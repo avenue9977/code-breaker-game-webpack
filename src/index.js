@@ -35,7 +35,7 @@ function startTheGame() {
         // hide warning if shown
         warning.classList.remove('show');
 
-        html = displayResults(userInput, gameNumber);
+        var html = displayResults(userInput, gameNumber);
 
         // display result
         results.innerHTML += html;
