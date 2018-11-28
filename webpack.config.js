@@ -8,9 +8,9 @@ module.exports = {
         app: './src/index.js'
     },
     devtool: 'inline-source-maps',
-    // devServer: {
-    //     contentBase: './dist'
-    // },
+    devServer: {
+        contentBase: './dist'
+    },
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Code Breaker',

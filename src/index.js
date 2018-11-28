@@ -1,12 +1,9 @@
 /*jshint esversion: 6 */
-
-import $ from 'jquery';
 import './style.css';
 import './assets/bootstrap/bootstrap.min.css';
 import './assets/font-awesome/fontawesome-all.min.css';
 
-let gameNumber,
-    guess = document.getElementById('your-guess'),
+let guess = document.getElementById('your-guess'),
     submit = document.getElementById('submit-guess'),
     results = document.getElementById('results'),
     hiddenCode = document.getElementById('code'),
@@ -15,14 +12,13 @@ let gameNumber,
     answers = document.getElementsByClassName('res'),
     success = document.getElementById('success'),
     warning = document.getElementById('warning'),
-    gameOverWarning = document.getElementById('game-over'),
-    turns = 0;
+    gameOverWarning = document.getElementById('game-over');
 
 // initialize the game number
-gameNumber = generateFourRandomNumbers();
+const gameNumber = generateFourRandomNumbers();
 
-function startTheGame() {
-
+const startTheGame = () => {
+    let turns = 0;
     // get input data
     let userInput = guess.value;
 
@@ -58,7 +54,7 @@ function startTheGame() {
 // generate random 4 digits 
 // returns String
 function generateFourRandomNumbers() {
-    let number = Math.floor(Math.random() * 10000).toString();
+    const number = Math.floor(Math.random() * 10000).toString();
     if (number.length < 4) {
         number = '0' + number;
     }
@@ -67,7 +63,7 @@ function generateFourRandomNumbers() {
 
 // display the results to the user
 // returns String
-function displayResults(userInput, gameNumber) {
+const displayResults = (userInput, gameNumber) => {
     let html = '<div class="row"><div class="col-sm-6">' + userInput + '</div><div class="res col-sm-6">';
 
     for (var i = 0; i < 4; i++) {
@@ -87,7 +83,7 @@ function displayResults(userInput, gameNumber) {
 
 // is the submited number equal to the game number
 // returns boolean
-function isWining() {
+const isWining = () => {
     if (answers.length > 0) {
         var correct = 0;
         for (var i = 0; i < 4; i++) {
@@ -106,7 +102,7 @@ function isWining() {
     }
 }
 
-function gameOver() {
+const gameOver = () => {
     gameOverWarning.classList.remove('hide');
     gameOverWarning.classList.add('show');
     playAgainButton.classList.remove('hide');
@@ -118,7 +114,7 @@ function gameOver() {
     submit.disabled = true;
 }
 
-function winTheGame() {
+const winTheGame = () => {
     inputForm.classList.add('hide');
     success.classList.add('show');
     success.classList.remove('hide');
@@ -129,7 +125,7 @@ function winTheGame() {
     hiddenCode.textContent = gameNumber;
 }
 
-playAgainButton.addEventListener('click', function() {
+playAgainButton.addEventListener('click', () => {
     window.location.reload();
 });
 
