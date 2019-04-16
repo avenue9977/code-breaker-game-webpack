@@ -13,7 +13,9 @@
     "keywords": [],
     "author": "Nikola Chetelyazov",
     "license": "ISC",
-    "devDependencies": {},
+    "devDependencies": {
+        "webpack-cli": "^3.3.0"
+    },
     "dependencies": {
         "bootstrap": "^4.0.0",
         "chalk": "^2.3.2",
