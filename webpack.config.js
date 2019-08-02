@@ -1,7 +1,7 @@
 /*jshint esversion: 6 */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -17,7 +17,7 @@ module.exports = {
             template: 'src/index.html',
             favicon: 'src/favicon.png'
         }),
-        new CleanWebpackPlugin(['dist'])
+        new CleanWebpackPlugin()
     ],
     output: {
         filename: '[name].bundle.js',
